@@ -31,6 +31,7 @@ ENDIF(UNIX)
 IF(WIN32 OR MSVC)
     cmake_policy(SET CMP0074 NEW)
     set(SFML_DIR "${PROJECT_SOURCE_DIR}/win-lib/SFML/lib/cmake/SFML")
+    set(TBB_DIR "${PROJECT_SOURCE_DIR}/win-lib/oneTBB/lib/cmake/tbb")
 ENDIF(WIN32 OR MSVC)
 
 set(SFML_STATIC_LIBRARIES TRUE)
@@ -42,3 +43,9 @@ find_package(SFML 2.5 COMPONENTS system graphics window REQUIRED)
 if (SFML_FOUND)
     target_link_libraries(palpha sfml-graphics)
 endif ()
+
+find_package(TBB)
+
+if(TBB_FOUND)
+    target_link_libraries(palpha TBB::tbb)
+endif()

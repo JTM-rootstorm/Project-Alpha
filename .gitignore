@@ -8,4 +8,5 @@
 /httpRequests/
 ./cmake-build-debug
 ./win-lib/SFML/*
+./win-lib/oneTBB/*
 .idea
