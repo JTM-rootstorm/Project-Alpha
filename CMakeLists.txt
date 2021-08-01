@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.7.2)
+cmake_minimum_required(VERSION 3.15)
 project(Project-Alpha)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -31,20 +31,9 @@ ENDIF(UNIX)
 IF(WIN32 OR MSVC)
     cmake_policy(SET CMP0074 NEW)
     set(SFML_DIR "${PROJECT_SOURCE_DIR}/win-lib/SFML/lib/cmake/SFML")
-    set(SFML_STATIC_LIBRARIES TRUE)
-
-    set(CompilerFlags
-            CMAKE_CXX_FLAGS
-            CMAKE_CXX_FLAGS_DEBUG
-            CMAKE_CXX_FLAGS_RELEASE
-            CMAKE_C_FLAGS
-            CMAKE_C_FLAGS_DEBUG
-            CMAKE_C_FLAGS_RELEASE
-            )
-    foreach(CompilerFlag ${CompilerFlags})
-        string(REPLACE "/MD" "/MT" ${CompilerFlag} "${${CompilerFlag}}")
-    endforeach()
 ENDIF(WIN32 OR MSVC)
+
+set(SFML_STATIC_LIBRARIES TRUE)
 
 add_executable(palpha ${SOURCE})
 
