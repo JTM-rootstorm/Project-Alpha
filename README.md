@@ -1,3 +1,3 @@
 # Project Alpha
 
-Roguelike using Python and libtcod
+Roguelike using nim and libtcod

@@ -8,3 +8,5 @@
 /httpRequests/
 .idea
 /__pycache__/
+/.vscode/
+*.exe
