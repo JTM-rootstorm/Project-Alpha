@@ -6,7 +6,7 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-./cmake-build-debug
-./win-lib/SFML/*
-./win-lib/oneTBB/*
 .idea
+/__pycache__/
+/.vscode/
+*.exe
